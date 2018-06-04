@@ -9,7 +9,7 @@
     <div class="content">
       <div class="name">{{item.name}}</div>
       <div class="mid">
-        <span class="fl">* * * * *</span>
+        <star :score="item.wm_poi_score"></star>
         <span class="count fl">月售{{ item.month_sale_num }}</span>
         <span class="distance fr">{{ distance }}</span>
         <span class="time fr">{{ item.avg_delivery_time }}分钟 |</span>
@@ -35,8 +35,12 @@
 </template>
 
 <script>
+  import Star from '../components/star/star'
     export default {
       name: "ShopItem",
+      components:{
+        'star':Star
+      },
       props:{
           item:{},
       },

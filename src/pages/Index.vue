@@ -10,10 +10,12 @@
       </mt-swipe-item>
     </mt-swipe>
   </div>
+
     <div class="types">
       <types-item  v-for="(item,index) in types" :cellData='item' :key="index" @click.native="itemClick(index)">
       </types-item>
     </div>
+    <cross_line></cross_line>
     <div class="shops">
       <shop-item v-for="(item,index) in shopList" :item="item" :key="index"></shop-item>
     </div>
@@ -23,11 +25,15 @@
 <script>
   import TypeItem from '../components/TypeItem'
   import ShopItem from '../components/ShopItem'
+  import CrossLine11 from '../components/cross-line/cross-line'
+
     export default {
       name: "Index",
       components:{
        'types-item': TypeItem,
-       'shop-item': ShopItem
+       'shop-item': ShopItem,
+       'cross_line':CrossLine11,
+
       }
       ,
       data() {
